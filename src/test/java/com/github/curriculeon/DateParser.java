@@ -11,7 +11,7 @@ import java.util.Date;
 public class DateParser {
     public static Date parseDate(String sDate1) {
         try {
-            return new SimpleDateFormat("MM/dd/yyyy").parse(sDate1);
+            return new SimpleDateFormat("MM-dd-yyyy").parse(sDate1);
         } catch (ParseException e) {
             throw new Error(e);
         }

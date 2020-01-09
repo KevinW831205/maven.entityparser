@@ -2,6 +2,8 @@ package com.github.curriculeon;
 
 
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -12,13 +14,23 @@ public class PetParser implements Parser<Pet> {
     @Override
     public Pet parseString(String data) {
         String[] fields = data.split("\n");
-//        return new Pet(Long.parseLong(fields[0]) , fields[1], DateParser );
-        return null;
+        Pet result =  null;
+        try {
+            result = new Pet(Long.parseLong(fields[0]) , fields[1], new SimpleDateFormat("MM-dd-yyyy").parse(fields[2]) );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
     public Pet[] parseStrings(String[] data) {
-        return new Pet[0];
+
+        Pet[] result = new Pet[data.length];
+        for(int i=0; i<result.length; i++){
+            result[i] = parseString(data[i]);
+        }
+        return result;
     }
 
     @Override

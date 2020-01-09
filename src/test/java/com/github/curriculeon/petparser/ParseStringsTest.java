@@ -55,9 +55,9 @@ public class ParseStringsTest {
         String name1 = "Goliath the Golem";
         String dateString1 = "0-0-0";
         String data1 = new StringJoiner("\n")
-                .add(id0.toString())
-                .add(name0)
-                .add(dateString0)
+                .add(id1.toString())
+                .add(name1)
+                .add(dateString1)
                 .toString();
 
         String[] dataArray = {data0, data1};
@@ -85,9 +85,9 @@ public class ParseStringsTest {
         String name1 = "Goliath the Golem";
         String dateString1 = "0-0-0";
         String data1 = new StringJoiner("\n")
-                .add(id0.toString())
-                .add(name0)
-                .add(dateString0)
+                .add(id1.toString())
+                .add(name1)
+                .add(dateString1)
                 .toString();
 
 
@@ -95,12 +95,12 @@ public class ParseStringsTest {
         String name2 = "Nikola the Electrobuzz";
         String dateString2 = "06-10-1856";
         String data2 = new StringJoiner("\n")
-                .add(id0.toString())
-                .add(name0)
-                .add(dateString0)
+                .add(id2.toString())
+                .add(name2)
+                .add(dateString2)
                 .toString();
 
-        String[] dataArray = {data0, data1};
+        String[] dataArray = {data0, data1, data2};
         Pet pet0 = new Pet(id0, name0, DateParser.parseDate(dateString0));
         Pet pet1 = new Pet(id1, name1, DateParser.parseDate(dateString1));
         Pet pet2 = new Pet(id2, name2, DateParser.parseDate(dateString2));
