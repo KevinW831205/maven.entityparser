@@ -35,6 +35,12 @@ public class PetParser implements Parser<Pet> {
 
     @Override
     public Pet[] parseFile(File data) {
-        return new Pet[0];
+        String dataAsString = new FileReader(data.getPath()).toString();
+        String[] fieldsAsStrings = dataAsString.split("\n");
+        String[] fieldsGrouped = new String[fieldsAsStrings.length/3];
+        for (int i=0; i<fieldsGrouped.length; i++){
+            fieldsGrouped[i] = fieldsAsStrings[3*i] + "\n"+fieldsAsStrings[3*i+1]+"\n"+fieldsAsStrings[3*i+2];
+        }
+        return parseStrings(fieldsGrouped);
     }
 }

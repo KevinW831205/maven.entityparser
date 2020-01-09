@@ -25,7 +25,7 @@ public class ParseFileTest {
         Pet[] actual = parser.parseFile(fileOfData);
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assert.assertArrayEquals(expected, actual);
     }
 
 
@@ -60,7 +60,7 @@ public class ParseFileTest {
     @Test
     public void test2() {
         // given
-        Long id = 1L;
+        Long id = 2L;
         String name = "zula the kitty";
         Date date = DateParser.parseDate("01-01-2005");
         Pet pet = new Pet(id, name, date);

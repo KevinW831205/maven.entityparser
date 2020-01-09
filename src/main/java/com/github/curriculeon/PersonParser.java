@@ -27,10 +27,10 @@ public class PersonParser implements Parser<Person> {
         System.out.println(data.getPath());
         String dataAsString = new FileReader(data.getPath()).toString();
         String[] fieldAsString = dataAsString.split("\n");
-        String[] splittedData = new String[fieldAsString.length/3];
-        for (int i=0; i<splittedData.length; i++){
-            splittedData[i] = fieldAsString[3*i] + "\n"+fieldAsString[3*i+1]+"\n"+fieldAsString[3*i+2];
+        String[] fieldsGrouped = new String[fieldAsString.length/3];
+        for (int i=0; i<fieldsGrouped.length; i++){
+            fieldsGrouped[i] = fieldAsString[3*i] + "\n"+fieldAsString[3*i+1]+"\n"+fieldAsString[3*i+2];
         }
-        return parseStrings(splittedData);
+        return parseStrings(fieldsGrouped);
     }
 }
